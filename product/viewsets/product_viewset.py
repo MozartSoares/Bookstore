@@ -1,9 +1,9 @@
-from rest_framework.viewsets import ModelViewset
+from rest_framework.viewsets import ModelViewSet
 
 from product.models import Product
 from product.serializers import ProductSerializer
 
-class ProductViewSet(ModelViewset):
+class ProductViewSet(ModelViewSet):
   
   serializer_class = ProductSerializer
   
