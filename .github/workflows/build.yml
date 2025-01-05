@@ -29,8 +29,14 @@ jobs:
 
     - name: Install dependencies
       shell: bash
-      run: poetry install
+      run: | 
+        poetry install
 
-    - name: Test
+    - name: Run migrations (if needed)
       run: |
-        python manage.py test
+        poetry run python manage.py migrate
+        
+    - name: Test
+      shell: bash
+      run: |
+        poetry run python manage.py test
